@@ -1,4 +1,5 @@
 import Section2 from "@/components/sections/section2";
+import Section3 from "@/components/sections/section3";
 import { Heading } from "@chakra-ui/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -22,6 +23,8 @@ export default function Home() {
       </section>
 
       <Section2 bgRef={bgRef} />
+
+      <Section3 bgRef={bgRef} />
     </>
   );
 }
