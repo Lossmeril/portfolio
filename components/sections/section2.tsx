@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { MutableRefObject, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +18,7 @@ const Section2 = ({ bgRef }: any) => {
     const section = sectionRef.current;
     const sun = sunRef.current;
 
+    // BACKGROUND FADE IN
     gsap.fromTo(
       background,
       {},
@@ -38,6 +39,7 @@ const Section2 = ({ bgRef }: any) => {
       }
     );
 
+    // FADE IN SUN
     gsap.fromTo(
       sun,
       { y: 500, opacity: 0 },
@@ -59,6 +61,7 @@ const Section2 = ({ bgRef }: any) => {
       }
     );
 
+    // SCALE SUN AS A TRANSITION TO A NEW SECTION
     gsap.fromTo(
       sun,
       { scale: 1 },
@@ -70,6 +73,27 @@ const Section2 = ({ bgRef }: any) => {
           trigger: sectionEnd,
           start: "top 60%",
           end: "top 10%",
+          scrub: true,
+          toggleActions: "restart none none none",
+          markers: {
+            startColor: "green",
+            endColor: "cyan",
+          },
+        },
+      }
+    );
+
+    // HIDE SUN AFTER INITIATING NEW SECTION
+    gsap.fromTo(
+      sun,
+      {},
+      {
+        opacity: 0,
+
+        scrollTrigger: {
+          trigger: sectionEnd,
+          start: "top 10%",
+          end: "top 0%",
           scrub: true,
           toggleActions: "restart none none none",
           markers: {
