@@ -1,3 +1,12 @@
+//UTILITY --FONTS
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import "./colors.module";
+
+// @font-face {
+//   font-family: "Konnect Extra Bold";
+//   src: url(/fonts/KonnectExtraBold.otf);
+// }
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -11,7 +20,7 @@ body {
   height: 100vh;
   z-index: -1;
 
-  background-color: #1e1e1e;
+  background: #1e1e1e;
 }
 
 section {
@@ -30,7 +39,7 @@ section {
       aspect-ratio: 1/1;
       border-radius: 100%;
 
-      background-color: yellow;
+      background-color: $gold;
       opacity: 0;
       z-index: 2;
     }

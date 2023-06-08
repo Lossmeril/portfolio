@@ -23,7 +23,7 @@ const Section2 = ({ bgRef }: any) => {
       background,
       {},
       {
-        backgroundColor: "purple",
+        background: "#5d1969",
         duration: 3,
         scrollTrigger: {
           trigger: section,
