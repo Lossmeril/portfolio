@@ -46,7 +46,7 @@ const Section2 = ({ bgRef }: any) => {
       {
         y: 0,
         opacity: 1,
-        duration: 3,
+        ease: "power1.inOut",
         scrollTrigger: {
           trigger: section,
           start: "top 50%",

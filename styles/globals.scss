@@ -45,13 +45,20 @@ section {
     }
   }
 
+  &#portfolio {
+    // height: 200vh;
+    z-index: 3;
+  }
+
   .section-end {
     position: absolute;
     bottom: 0px;
     left: 0;
+
     width: 100vw;
-    height: 1em;
-    background-color: red;
+    height: 2em;
+
+    // background-color: red;
     z-index: 5;
   }
 }
