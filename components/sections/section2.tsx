@@ -10,6 +10,7 @@ const Section2 = ({ bgRef }: any) => {
 
   const sectionRef = useRef(null);
   const sunRef = useRef(null);
+  const skyRef = useRef(null);
 
   useEffect(() => {
     const background = backgroundRef.current;
@@ -17,6 +18,7 @@ const Section2 = ({ bgRef }: any) => {
 
     const section = sectionRef.current;
     const sun = sunRef.current;
+    const sky = skyRef.current;
 
     // BACKGROUND FADE IN
     gsap.fromTo(
@@ -31,10 +33,31 @@ const Section2 = ({ bgRef }: any) => {
           end: "top 10%",
           scrub: true,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "green",
-            endColor: "cyan",
-          },
+          // markers: {
+          //   startColor: "red",
+          //   endColor: "red",
+          // },
+        },
+      }
+    );
+
+    // FADE IN SKY
+    gsap.fromTo(
+      sky,
+      {},
+      {
+        opacity: 1,
+        duration: 3,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 70%",
+          end: "top 10%",
+          scrub: true,
+          toggleActions: "restart none none none",
+          // markers: {
+          //   startColor: "red",
+          //   endColor: "red",
+          // },
         },
       }
     );
@@ -53,10 +76,10 @@ const Section2 = ({ bgRef }: any) => {
           end: "top 10%",
           scrub: true,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "green",
-            endColor: "cyan",
-          },
+          // markers: {
+          //   startColor: "green",
+          //   endColor: "green",
+          // },
         },
       }
     );
@@ -75,10 +98,10 @@ const Section2 = ({ bgRef }: any) => {
           end: "top 10%",
           scrub: true,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "green",
-            endColor: "cyan",
-          },
+          // markers: {
+          //   startColor: "orange",
+          //   endColor: "orange",
+          // },
         },
       }
     );
@@ -96,10 +119,31 @@ const Section2 = ({ bgRef }: any) => {
           end: "top 0%",
           scrub: true,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "green",
-            endColor: "cyan",
-          },
+          // markers: {
+          //   startColor: "cyan",
+          //   endColor: "cyan",
+          // },
+        },
+      }
+    );
+
+    // HIDE SKY AFTER INITIATING NEW SECTION
+    gsap.fromTo(
+      sky,
+      {},
+      {
+        opacity: 0,
+
+        scrollTrigger: {
+          trigger: sectionEnd,
+          start: "top 10%",
+          end: "top 10%",
+          scrub: true,
+          toggleActions: "restart none none none",
+          // markers: {
+          //   startColor: "cyan",
+          //   endColor: "cyan",
+          // },
         },
       }
     );
@@ -108,6 +152,7 @@ const Section2 = ({ bgRef }: any) => {
   return (
     <section id="send-me-an-angel" ref={sectionRef}>
       <div id="sun" ref={sunRef}></div>
+      <div id="section-2-sky" ref={skyRef}></div>
       <div className="section-end" ref={section2end}></div>
     </section>
   );

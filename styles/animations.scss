@@ -1,0 +1,33 @@
+@-webkit-keyframes SkyAnimation {
+  0% {
+    background-position: 0% 78%;
+  }
+  50% {
+    background-position: 100% 23%;
+  }
+  100% {
+    background-position: 0% 78%;
+  }
+}
+@-o-keyframes SkyAnimation {
+  0% {
+    background-position: 0% 78%;
+  }
+  50% {
+    background-position: 100% 23%;
+  }
+  100% {
+    background-position: 0% 78%;
+  }
+}
+@keyframes SkyAnimation {
+  0% {
+    background-position: 0% 78%;
+  }
+  50% {
+    background-position: 100% 23%;
+  }
+  100% {
+    background-position: 0% 78%;
+  }
+}

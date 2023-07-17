@@ -1,6 +1,7 @@
 //UTILITY --FONTS
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
 @import "./colors.module";
+@import "./animations";
 
 // @font-face {
 //   font-family: "Konnect Extra Bold";
@@ -42,6 +43,30 @@ section {
       background-color: $gold;
       opacity: 0;
       z-index: 2;
+    }
+
+    #section-2-sky {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+
+      opacity: 0;
+      background: linear-gradient(
+        45deg,
+        rgb(180, 43, 123),
+        rgb(112, 15, 168),
+        rgb(202, 86, 40)
+      );
+      background-size: 800% 800%;
+
+      -webkit-animation: SkyAnimation 15s ease infinite;
+      -o-animation: SkyAnimation 15s ease infinite;
+      animation: SkyAnimation 15s ease infinite;
     }
   }
 
