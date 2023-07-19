@@ -1,16 +1,47 @@
 import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Stars = () => {
-  const count = Array<Number>(50);
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const [starsCoord, setStarCoord] = useState(
+    Array.from({ length: 40 }, () => [
+      Math.floor(Math.random() * 1920),
+      Math.floor(Math.random() * 1080),
+    ])
+  );
 
-  return <Image src="star-solid.svg" alt="" />;
+  useEffect(() => {
+    setStarCoord(
+      Array.from({ length: 40 }, () => [
+        Math.floor(Math.random() * window.innerWidth),
+        Math.floor(Math.random() * window.innerHeight),
+      ])
+    );
+  }, []);
+
+  console.log(starsCoord);
+  return (
+    <>
+      {starsCoord.map((star) => (
+        <Image
+          className="star"
+          key={star[0]}
+          src="/send-me-an-angel/star-solid.svg"
+          alt=""
+          position="absolute"
+          left={star[0] + "px"}
+          top={star[1] + "px"}
+          width={(Math.random() + 1) * 10 + "px"}
+          animation={
+            "StarBlink " + (Math.random() + 1) * 5 + "s ease infinite;"
+          }
+        />
+      ))}
+    </>
+  );
 };
 
 const Section2 = ({ bgRef }: any) => {
@@ -18,8 +49,10 @@ const Section2 = ({ bgRef }: any) => {
   const section2end = useRef(null);
 
   const sectionRef = useRef(null);
+
   const sunRef = useRef(null);
   const skyRef = useRef(null);
+  const fgRef = useRef(null);
 
   useEffect(() => {
     const background = backgroundRef.current;
@@ -28,6 +61,7 @@ const Section2 = ({ bgRef }: any) => {
     const section = sectionRef.current;
     const sun = sunRef.current;
     const sky = skyRef.current;
+    const fg = fgRef.current;
 
     // BACKGROUND FADE IN
     gsap.fromTo(
@@ -160,10 +194,15 @@ const Section2 = ({ bgRef }: any) => {
 
   return (
     <section id="send-me-an-angel" ref={sectionRef}>
-      <Box className="section-content">
-        <Grid templateColumns="repeat(2,1fr)" gap="64px" className="grid">
+      <Box className="section-content" h="100%">
+        <Grid
+          templateColumns="repeat(2,1fr)"
+          gap="64px"
+          className="grid"
+          h="100%"
+        >
           <GridItem></GridItem>
-          <GridItem>
+          <GridItem border="1px solid black" h="100%">
             <Image
               className="laurel"
               src="/laurels/swiff-2023.png"
@@ -177,9 +216,19 @@ const Section2 = ({ bgRef }: any) => {
           </GridItem>
         </Grid>
       </Box>
+      <Box id="section-2-fg" ref={fgRef} position="relative" zIndex={6}>
+        <Image
+          src="/send-me-an-angel/cliff.svg"
+          alt=""
+          width="100vw"
+          position="sticky"
+          top="100%"
+          left="0"
+        />
+      </Box>
       <div id="sun" ref={sunRef}></div>
       <div id="section-2-sky" ref={skyRef}>
-        {/* <Stars /> */}
+        <Stars />
       </div>
       <div className="section-end" ref={section2end}></div>
     </section>
