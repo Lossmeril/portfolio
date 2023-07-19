@@ -29,6 +29,14 @@ section {
   border: 1px dashed white;
   position: relative;
 
+  .section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5 !important;
+  }
+
   &#send-me-an-angel {
     #sun {
       position: fixed;
@@ -40,7 +48,12 @@ section {
       aspect-ratio: 1/1;
       border-radius: 100%;
 
-      background-color: $gold;
+      background: linear-gradient(
+        180deg,
+        $gold,
+        rgb(231, 198, 9),
+        rgb(202, 86, 40)
+      );
       opacity: 0;
       z-index: 2;
     }
@@ -67,6 +80,14 @@ section {
       -webkit-animation: SkyAnimation 15s ease infinite;
       -o-animation: SkyAnimation 15s ease infinite;
       animation: SkyAnimation 15s ease infinite;
+    }
+
+    .section-content .grid {
+      width: 100vw;
+
+      .laurel {
+        width: 240px;
+      }
     }
   }
 

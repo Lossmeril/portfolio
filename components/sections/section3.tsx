@@ -30,10 +30,10 @@ const Section3 = ({ bgRef }: any) => {
           end: "top 10%",
           scrub: true,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "black",
-            endColor: "black",
-          },
+          // markers: {
+          //   startColor: "black",
+          //   endColor: "black",
+          // },
         },
       }
     );

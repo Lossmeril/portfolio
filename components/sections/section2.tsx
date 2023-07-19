@@ -1,8 +1,17 @@
+import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const Stars = () => {
+  const count = Array<Number>(50);
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  return <Image src="star-solid.svg" alt="" />;
+};
 
 const Section2 = ({ bgRef }: any) => {
   const backgroundRef = bgRef;
@@ -151,8 +160,27 @@ const Section2 = ({ bgRef }: any) => {
 
   return (
     <section id="send-me-an-angel" ref={sectionRef}>
+      <Box className="section-content">
+        <Grid templateColumns="repeat(2,1fr)" gap="64px" className="grid">
+          <GridItem></GridItem>
+          <GridItem>
+            <Image
+              className="laurel"
+              src="/laurels/swiff-2023.png"
+              alt="Student World Impact Film Festival 2023 Finalist"
+            />
+            <Image
+              className="laurel"
+              src="/laurels/but-2023.png"
+              alt="B-Movie, Underground and Trash Film Festival 2023 official selection"
+            />
+          </GridItem>
+        </Grid>
+      </Box>
       <div id="sun" ref={sunRef}></div>
-      <div id="section-2-sky" ref={skyRef}></div>
+      <div id="section-2-sky" ref={skyRef}>
+        {/* <Stars /> */}
+      </div>
       <div className="section-end" ref={section2end}></div>
     </section>
   );
