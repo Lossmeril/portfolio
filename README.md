@@ -8,9 +8,7 @@ This is a source repository for Lossmeril's (Michal Špitálský) portfolio. Ple
 - Next.js
 - React
 - Typescript
-- Chakra UI
-- GSAP + GSAP ScrollTrigger
-- SASS
+- TailwindCSS
 
 ## Try it yourself
 
