@@ -8,7 +8,8 @@ This is a source repository for Lossmeril's (Michal Špitálský) portfolio. Ple
 - Next.js
 - React
 - Typescript
-- TailwindCSS
+- Chakra UI
+- SASS
 
 ## Try it yourself
 
