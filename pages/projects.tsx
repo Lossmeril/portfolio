@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 
@@ -17,8 +17,12 @@ const ProjectsPage = () => {
         exit={{ x: "100%" }}
         transition={{ duration: 0.75, ease: "easeOut" }}
       >
-        <Box as="main" bgColor="#48bf84" color="white" zIndex={10}>
-          <Heading as="h1">Projects</Heading>
+        <Box as="main" bgColor="#48bf84" color="white">
+          <Center w="100%" h="100%">
+            <Box>
+              <Heading as="h1">Projects</Heading>
+            </Box>
+          </Center>
         </Box>
       </motion.div>
     </>

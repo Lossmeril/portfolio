@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -12,14 +12,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 1 }}
+        initial={{ x: "-100%" }}
+        animate={{ x: "0" }}
+        exit={{ x: "-100%" }}
         transition={{ duration: 0.75, ease: "easeOut" }}
       >
         <Box as="main">
-          <Heading as="h1">Michal Špitálský</Heading>
-          <Heading as="p">We can live in a world that we design</Heading>
+          <Center w="100%" h="100%">
+            <Box>
+              <Heading as="h1">Michal Špitálský</Heading>
+              <Heading as="p">We can live in a world that we design</Heading>
+            </Box>
+          </Center>
         </Box>
       </motion.div>
     </>

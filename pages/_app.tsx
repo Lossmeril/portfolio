@@ -8,7 +8,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider>
       <Navbar />
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
     </ChakraProvider>
