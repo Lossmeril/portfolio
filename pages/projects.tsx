@@ -1,6 +1,7 @@
-import { Box, Heading, Center } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Head from "next/head";
+import { motion } from "framer-motion";
+import { Box, Heading, Text, Badge } from "@chakra-ui/react";
+import { projects } from "@/data/projects";
 
 const ProjectsPage = () => {
   return (
@@ -18,11 +19,25 @@ const ProjectsPage = () => {
         transition={{ duration: 0.75, ease: "easeOut" }}
       >
         <Box as="main" bgColor="#48bf84" color="white">
-          <Center w="100%" h="100%">
-            <Box>
-              <Heading as="h1">Projects</Heading>
-            </Box>
-          </Center>
+          <Heading as="h1">Projects</Heading>
+          {projects.map((project) => (
+            <>
+              <Heading
+                as="h2"
+                key={project.name}
+                fontFamily="Gilroy Heavy"
+                textTransform="lowercase"
+                fontSize="6xl"
+                lineHeight="5xl"
+                letterSpacing="-1px"
+              >
+                {project.name}{" "}
+                <Text as="span" fontSize="2xl" letterSpacing="5px">
+                  {project.type}
+                </Text>
+              </Heading>
+            </>
+          ))}
         </Box>
       </motion.div>
     </>
